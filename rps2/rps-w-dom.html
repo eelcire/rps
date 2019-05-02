@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Rock Paper Scissors!</title>
+        <link href = "rps-w-dom.css" type = "text/css" rel= "stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Rock Paper Scissors!</h1>
+        </header>
+        <div class = "score">
+            <div class = "badge" id = "userbadge">User</div>
+            <div class = "badge" id = "compbadge">Comp</div>
+            <span id = "userscore">0</span>:<span id = "compscore">0</span>
+        </div>
+        <div class = "result">
+            <p>Make a choice!</p>
+        </div>
+        <div class = "choices">
+            <button class = "choice" id = "r">Rock</button>
+            <button class = "choice" id = "p">Paper</button>
+            <button class = "choice" id = "s">Scissors</button>
+        </div>
+        <div class = "next">
+            <p>Your turn!</p>
+        </div>
+        <div class = "reset">
+            <button id = "restart">Restart?</button>
+        </div>
+        <script src = "rps-w-dom.js"></script>
+    </body>
+</html>
