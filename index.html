@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            alert("You are playing Rock, Paper, Scissors!")
+            let playerScore = 0;
+            let computerScore = 0;
+            function computerPlay() {
+                let random = Math.floor(Math.random() * 3 + 1);
+                if (random === 1) {
+                    return "rock";
+                } else if (random === 2) {
+                    return "paper";
+                } else {
+                    return "scissors";
+                }
+            }
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection === computerSelection) {
+                    alert("Draw");
+                }   else if (playerSelection === "rock" && computerSelection == "paper") {
+                    computerScore++;
+                    alert("You lose! Paper beats rock!");
+                }   else if (playerSelection === "rock" && computerSelection == "scissors") {
+                    playerScore++;
+                    alert("You win! Rock beats scissors!");
+                }   else if (playerSelection === "paper" && computerSelection == "scissors") {
+                    computerScore++;
+                    alert("You lose! Scissors beats paper!");
+                }   else if (playerSelection === "paper" && computerSelection == "rock") {
+                    playerScore++;
+                    alert("You win! Paper beats rock!");
+                }   else if (playerSelection === "scissors" && computerSelection == "rock") {
+                    computerScore++;
+                    alert("You lose! Rock beats scissors!");
+                }   else if (playerSelection === "scissors" && computerSelection == "paper") {
+                    playerScore++;
+                    alert("You win! Scissors beat Paper!");
+                }   else {
+                    alert("Hmmm. I can't seem to understand what you wrote. Try again.")
+                }
+            }
+            (function game() {
+                let playerSelection = prompt("Rock, Paper, Scissors?")
+                playerSelection = playerSelection.toLowerCase();
+                let computerSelection = computerPlay();
+                playRound(playerSelection, computerSelection);
+                alert(`Player Score = ${playerScore} \n Computer Score = ${computerScore}`)
+                if (playerScore == 5) {
+                    alert("You win! Resetting!");
+                    playerScore == 0;
+                    computerScore == 0;
+                    game();
+                }   else if (computerScore == 5) {
+                    alert("You lose! Resetting!");
+                    playerScore == 0;
+                    computerScore == 0;
+                    game();
+                }   else {
+                    game();
+                }
+            }) ();
+        </script>
+    </body>
+    <footer>
+    </footer>
+</html>
